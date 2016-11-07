@@ -6,6 +6,10 @@ import os
 app = Flask(__name__)
 
 
+@app.route('/')
+def index():
+    return 'please visit my blog at http://kingname.info'
+
 @app.route("/alarm_clock")
 def alarm_clock():
     if os.path.exists('alarmclock.txt'):
