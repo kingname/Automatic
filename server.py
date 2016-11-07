@@ -17,8 +17,8 @@ def alarm_clock():
             date_in_txt = f.read()
             today = str(date.today())
             if date_in_txt == today:
-                return 'yes'
-    return 'no'
+                return 'No'
+    return 'Yes'
 
 
 @app.route('/set_alarm')
