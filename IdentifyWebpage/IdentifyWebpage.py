@@ -20,18 +20,18 @@ class IdentifyWebpage(object):
         os.system('adb shell /system/bin/screencap -p /sdcard/screenshot.png')
         os.system('adb pull /sdcard/screenshot.png ~/Project/IndenfyWebpage/screenshot.png')
 
-    def indenfy(self):
+    def identify(self):
         result = []
         img = Image.open('snapshot.png')
         for point in self.points:
             color = img.getpixel(point)
             result.append(color)
         if len(set(result)) == 1:
-            print('As the 9 points in the snapshot have the same RGB values,'
+            print('As the 9 points in the snapshot have the same RGB values, '
                   'I can assert that the web page is loaded successfully.\n'
-                  '截图中9个点的RGB值完全一样，可以认为是一张纯色的截图。')
+                  '截图中9个点的RGB值完全一样，可以认为网页加载成功。')
 
 if __name__ == '__main__':
     identifier = IdentifyWebpage()
     identifier.get_snapshot()
-    identifier.indenfy()
+    identifier.identify()
