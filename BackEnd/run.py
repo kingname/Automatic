@@ -1,4 +1,4 @@
-from BackEnd.src.Views import *
+from src.Views import *
 
 
 if __name__ == "__main__":
