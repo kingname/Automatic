@@ -1,0 +1,8 @@
+from BackEnd.src.Views import *
+
+
+if __name__ == "__main__":
+    host = app.config['HOST']
+    port = app.config['PORT']
+    app.run(host=host, port=port)
+    # app.run(processes=10)
