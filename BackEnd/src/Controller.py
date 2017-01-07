@@ -31,8 +31,8 @@ class Controller(object):
             return '这个账号已经被人注册，请更换。'
 
         new_user = Models.Account(user=user,
-                                  find_phone_status='不需要寻找手机',
-                                  alarm_status='启动闹钟',
+                                  find_phone_status=self.message['find_phone_disable'],
+                                  alarm_status=self.message['alarm_enable'],
                                   register_time=self.current_time)
         new_user.save()
         return '添加账号成功！'
